@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect
 import csv
+from flask.wrappers import Response
+import git
 
-from pip._internal.vcs import git
 
 app = Flask(__name__)
 
