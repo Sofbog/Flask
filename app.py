@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, redirect
 import csv
 
+from pip._internal.vcs import git
+
 app = Flask(__name__)
 
 @app.route('/git_update', methods=['POST'])
 def git_update():
-  repo = git.Repo('./orbe')
+  repo = git.Repo('./Sofbog.github.io.')
   origin = repo.remotes.origin
   repo.create_head('main',
   origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
